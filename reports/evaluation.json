@@ -1,0 +1,153 @@
+{
+  "dataset": {
+    "raw_rows": 6497,
+    "clean_rows": 5320,
+    "raw_duplicate_rows": 1177,
+    "duplicate_rows_removed": 1177,
+    "missing_cells": 0,
+    "wine_type_counts": {
+      "white": 4898,
+      "red": 1599
+    }
+  },
+  "split": {
+    "train_rows": 4256,
+    "test_rows": 1064,
+    "random_state": 42,
+    "test_size": 0.2
+  },
+  "model_comparison": [
+    {
+      "model": "KNeighborsRegressor",
+      "cv_rmse": 0.7149372526716617,
+      "cv_mae": 0.5531358736164563,
+      "cv_r2": 0.34325891384710305,
+      "best_params": {
+        "model__n_neighbors": 21,
+        "model__weights": "distance"
+      }
+    },
+    {
+      "model": "Ridge",
+      "cv_rmse": 0.735010323690641,
+      "cv_mae": 0.566652554740735,
+      "cv_r2": 0.3055793016653096,
+      "best_params": {
+        "model__alpha": 10.0
+      }
+    },
+    {
+      "model": "LinearRegression",
+      "cv_rmse": 0.7350437872502529,
+      "cv_mae": 0.5666450529924116,
+      "cv_r2": 0.3055121681420636,
+      "best_params": {}
+    },
+    {
+      "model": "Lasso",
+      "cv_rmse": 0.7350957405728942,
+      "cv_mae": 0.5668347396102854,
+      "cv_r2": 0.30542005807888667,
+      "best_params": {
+        "model__alpha": 0.001
+      }
+    },
+    {
+      "model": "LinearSVR",
+      "cv_rmse": 0.7370549917844859,
+      "cv_mae": 0.5660857956234355,
+      "cv_r2": 0.30165803727369034,
+      "best_params": {
+        "model__C": 10.0
+      }
+    },
+    {
+      "model": "DummyRegressor",
+      "cv_rmse": 0.8829243164880893,
+      "cv_mae": 0.696862417840011,
+      "cv_r2": -0.001564627350069525,
+      "best_params": {
+        "strategy": "mean"
+      }
+    }
+  ],
+  "selected_model": "KNeighborsRegressor",
+  "selected_parameters": {
+    "model__n_neighbors": 21,
+    "model__weights": "distance"
+  },
+  "baseline_test_metrics": {
+    "rmse": 0.8675790772750018,
+    "mae": 0.6942255780428516,
+    "r2": -0.0010928804463392616
+  },
+  "test_metrics": {
+    "rmse": 0.6853871834952694,
+    "mae": 0.5344601613765455,
+    "r2": 0.3752184575637113
+  },
+  "feature_importance": [
+    {
+      "feature": "alcohol",
+      "importance_mean": 0.10817711970192859,
+      "importance_std": 0.006255910575987689
+    },
+    {
+      "feature": "volatile_acidity",
+      "importance_mean": 0.03892594690575173,
+      "importance_std": 0.004733078685915496
+    },
+    {
+      "feature": "free_sulfur_dioxide",
+      "importance_mean": 0.03564680058237011,
+      "importance_std": 0.0032829903410345994
+    },
+    {
+      "feature": "sulphates",
+      "importance_mean": 0.033309387101825516,
+      "importance_std": 0.0026099719045020488
+    },
+    {
+      "feature": "total_sulfur_dioxide",
+      "importance_mean": 0.03292460376235582,
+      "importance_std": 0.004154214594340125
+    },
+    {
+      "feature": "density",
+      "importance_mean": 0.02410876812691314,
+      "importance_std": 0.003851819208211942
+    },
+    {
+      "feature": "chlorides",
+      "importance_mean": 0.02392906993095818,
+      "importance_std": 0.0035911639406998952
+    },
+    {
+      "feature": "residual_sugar",
+      "importance_mean": 0.023431111976932574,
+      "importance_std": 0.001302195020843007
+    },
+    {
+      "feature": "pH",
+      "importance_mean": 0.018004727168832214,
+      "importance_std": 0.0042939307943564995
+    },
+    {
+      "feature": "citric_acid",
+      "importance_mean": 0.017214655927686628,
+      "importance_std": 0.0030093434664411243
+    },
+    {
+      "feature": "fixed_acidity",
+      "importance_mean": 0.014849768818880648,
+      "importance_std": 0.0036548828746497237
+    },
+    {
+      "feature": "wine_type",
+      "importance_mean": 0.004324500489416949,
+      "importance_std": 0.0007110223534861238
+    }
+  ],
+  "model_path": "models/wine_quality_model.joblib",
+  "residual_plot_path": "reports/figures/test_residuals.png"
+}
