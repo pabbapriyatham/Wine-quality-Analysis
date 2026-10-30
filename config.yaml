@@ -1,0 +1,17 @@
+paths:
+  red_data: data/raw/winequality-red.csv
+  white_data: data/raw/winequality-white.csv
+  processed_data: data/processed/wine_quality.csv
+  model: models/wine_quality_model.joblib
+  evaluation: reports/evaluation.json
+  figures: reports/figures
+
+training:
+  random_state: 42
+  test_size: 0.2
+  cv_splits: 5
+
+dataset:
+  target: quality
+  source_id: 186
+  remove_exact_duplicates: true

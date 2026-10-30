@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wine-quality-project"
+version = "0.1.0"
+description = "A student project predicting wine quality with regression."
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "pandas==3.1.0",
+  "numpy==2.5.4",
+  "scikit-learn==1.9.1",
+  "matplotlib==3.11.2",
+  "joblib==1.6.0",
+  "PyYAML==6.0.3",
+  "typer==0.27.3",
+  "pydantic==2.14.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.2.0",
+  "pytest-cov==7.1.0",
+  "ruff==0.17.3",
+  "jupyter==1.1.1",
+  "ipykernel==7.4.0",
+]
+
+[project.scripts]
+wine-quality = "wine_quality.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
