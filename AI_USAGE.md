@@ -21,3 +21,11 @@ documentation, and to help debug the workflow. I reviewed the output and am resp
 for understanding and verifying the submitted work.”
 
 Please edit this statement to match the student's actual use and course policy.
+
+## Git publishing assistance
+
+An AI assistant organized the existing project files into eight commits and pushed
+them to GitHub. After the student selected four plain-language documents to leave out,
+the assistant created a separate upload history that excludes those files. These Git
+commits record the assistant's publishing work; they should not be presented as a
+record of student-authored development.
