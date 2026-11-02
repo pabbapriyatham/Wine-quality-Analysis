@@ -29,3 +29,11 @@ them to GitHub. After the student selected four plain-language documents to leav
 the assistant created a separate upload history that excludes those files. These Git
 commits record the assistant's publishing work; they should not be presented as a
 record of student-authored development.
+
+## Report revision for 2 November 2026
+
+An AI assistant revised the final report PDF using the saved evaluation JSON and
+existing project figures. It improved the report structure, tables, figure captions,
+metric explanations, and page styling. The numerical results were taken from the
+saved project evaluation; the student should review the report and verify it against
+the assignment and course policy before submission.
