@@ -27,6 +27,7 @@ The project requires Python 3.13. Exact project and development dependency versi
 wine-quality train
 wine-quality evaluate
 wine-quality predict --input examples/new_case.json
+wine-quality predict --input examples/new_case_red.json
 ```
 
 `train` removes exact duplicate observations after attaching `wine_type`, saves a
@@ -37,7 +38,8 @@ the selected model once on the untouched test split. The fitted preprocessing an
 regressor are saved together.
 
 `evaluate` reads the saved test metrics and does not retrain. `predict` validates a
-single JSON record and loads the saved pipeline.
+single JSON record and loads the saved pipeline. Sample input records for both white
+and red wine are provided in `examples/new_case.json` and `examples/new_case_red.json`.
 
 ## Project structure
 
