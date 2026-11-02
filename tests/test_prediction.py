@@ -12,7 +12,11 @@ from sklearn.dummy import DummyRegressor
 from wine_quality.config import load_config
 from wine_quality.data import FEATURE_COLUMNS
 from wine_quality.models import create_pipeline
-from wine_quality.prediction import WinePredictionInput, predict_quality
+from wine_quality.prediction import (
+    WinePredictionInput,
+    predict_quality,
+    read_prediction_input,
+)
 
 
 def valid_wine_input() -> dict[str, float | str]:
@@ -76,3 +80,16 @@ def test_prediction_loads_a_saved_pipeline(tmp_path) -> None:
     prediction = predict_quality(WinePredictionInput.model_validate(values), config)
 
     assert prediction == 6.0
+
+
+def test_example_payload_files_validate() -> None:
+    """The stored white and red wine example JSON files parse successfully."""
+    config = load_config()
+    examples_dir = config.project_root / "examples"
+
+    white_case = read_prediction_input(examples_dir / "new_case.json")
+    assert white_case.wine_type == "white"
+
+    red_case = read_prediction_input(examples_dir / "new_case_red.json")
+    assert red_case.wine_type == "red"
+
